@@ -43,7 +43,7 @@ class Student
     SQL
 
     @id = DB[:conn].execute(sql)[0][0]
-    print @id
+    print "hm"
     binding.pry
   end
 

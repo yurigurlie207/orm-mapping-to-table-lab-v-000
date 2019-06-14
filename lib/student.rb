@@ -42,7 +42,7 @@ class Student
       FROM students
     SQL
 
-    @id = DB[:conn].execute(sql)
+    @id = DB[:conn].execute(sql)[0][0]
     binding.pry
   end
 

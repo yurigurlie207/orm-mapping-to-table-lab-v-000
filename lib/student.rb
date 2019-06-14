@@ -37,7 +37,7 @@ class Student
 
     sql = <<-SQL
       SELECT last_insert_rowid()
-      FROM students"
+      FROM students
     SQL
     @id = DB[:conn].execute(")[0][0]
   end

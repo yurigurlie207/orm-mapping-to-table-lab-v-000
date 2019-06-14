@@ -1,5 +1,5 @@
 class Student
-
+  require pry
   # Remember, you can access your database connection anywhere in this class
   #  with DB[:conn]
 
@@ -39,8 +39,9 @@ class Student
       SELECT last_insert_rowid()
       FROM students
     SQL
-    
+
     @id = DB[:conn].execute(sql)[0][0]
+
   end
 
   def self.create(name:, grade:)

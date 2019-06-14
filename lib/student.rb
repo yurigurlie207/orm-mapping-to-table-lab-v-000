@@ -42,9 +42,8 @@ class Student
       FROM students
     SQL
 
-    @id = DB[:conn].execute(sql)
-    print "hm"
-    binding.pry
+    @id = DB[:conn].execute(sql)[0][0]
+    # binding.pry
   end
 
   def self.create(name:, grade:)

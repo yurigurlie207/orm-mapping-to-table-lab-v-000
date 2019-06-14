@@ -1,5 +1,6 @@
-class Student
+require 'pry'
 
+class Student
   # Remember, you can access your database connection anywhere in this class
   #  with DB[:conn]
 
@@ -20,6 +21,7 @@ class Student
         grade TEXT
         )
     SQL
+
     DB[:conn].execute(sql)
   end
 
@@ -35,7 +37,13 @@ class Student
     SQL
     DB[:conn].execute(sql, self.name, self.grade)
 
-    @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
+    sql = <<-SQL
+      SELECT last_insert_rowid()
+      FROM students
+    SQL
+
+    @id = DB[:conn].execute(sql)[0][0]
+    # binding.pry
   end
 
   def self.create(name:, grade:)

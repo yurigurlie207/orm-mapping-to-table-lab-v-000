@@ -43,7 +43,7 @@ class Student
     SQL
 
     @id = DB[:conn].execute(sql)[0][0]
-
+    binding.pry
   end
 
   def self.create(name:, grade:)

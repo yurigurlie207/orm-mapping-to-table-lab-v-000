@@ -21,7 +21,7 @@ class Student
         grade TEXT
         )
     SQL
-    DB[:conn].execute(sql)
+    @id = DB[:conn].execute(sql)
     binding.pry
   end
 
